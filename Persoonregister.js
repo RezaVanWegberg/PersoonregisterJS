@@ -49,44 +49,49 @@ var bijlage = [{
 }]
 
 
-function myFunction() {
-    document.getElementById("selectedLeeftijd").innerHTML = document.getElementById("leeftijd").value;
-}
+function register() {
+    // document.getElementById("selectedLeeftijd").innerHTML = document.getElementById("leeftijd").value;
+
+    var ContainerElement = document.getElementById('container');
+
+    var leeftijdCheck = parseInt(document.getElementById("leeftijd").value);
 
 
-var ContainerElement = document.getElementById('container');
-
-var leeftijdCheck = parseInt(document.getElementById("leeftijd").value);
-
-for (let x = 0; x < bijlage.length; x++) {
-
-    if (leeftijdCheck < bijlage[x].leeftijd) {
-
-        let container = document.createElement("div");
-        ContainerElement.appendChild(container);
-
-        let voornaam = document.createElement("p");
-        voornaam.innerHTML = "voornaam: " + bijlage[x]["voornaam"];
-        container.appendChild(voornaam);
-
-        let achternaam = document.createElement("p");
-        achternaam.innerHTML = "achternaam: " + bijlage[x]["achternaam"];
-        container.appendChild(achternaam);
-
-        let nationaliteit = document.createElement("p");
-        nationaliteit.innerHTML = "nationaliteit: " + bijlage[x]["nationaliteit"];
-        container.appendChild(nationaliteit);
-
-        let leeftijd = document.createElement("p");
-        leeftijd.innerHTML = "leeftijd: " + bijlage[x]["leeftijd"];
-        container.appendChild(leeftijd);
-
-        let gewicht = document.createElement("p");
-        gewicht.innerHTML = "gewicht: " + bijlage[x]["gewicht"];
-        container.appendChild(gewicht);
+    while (ContainerElement.hasChildNodes()) {
+        ContainerElement.firstChild.remove()
     }
 
-    else {
-        console.log("test else")
+
+    for (let x = 0; x < bijlage.length; x++) {
+
+        if (leeftijdCheck < bijlage[x].leeftijd) {
+
+            let container = document.createElement("div");
+            ContainerElement.appendChild(container);
+
+            let voornaam = document.createElement("p");
+            voornaam.innerHTML = "voornaam: " + bijlage[x]["voornaam"];
+            container.appendChild(voornaam);
+
+            let achternaam = document.createElement("p");
+            achternaam.innerHTML = "achternaam: " + bijlage[x]["achternaam"];
+            container.appendChild(achternaam);
+
+            let nationaliteit = document.createElement("p");
+            nationaliteit.innerHTML = "nationaliteit: " + bijlage[x]["nationaliteit"];
+            container.appendChild(nationaliteit);
+
+            let leeftijd = document.createElement("p");
+            leeftijd.innerHTML = "leeftijd: " + bijlage[x]["leeftijd"];
+            container.appendChild(leeftijd);
+
+            let gewicht = document.createElement("p");
+            gewicht.innerHTML = "gewicht: " + bijlage[x]["gewicht"];
+            container.appendChild(gewicht);
+        }
+
+        else {
+            console.log("test else")
+        }
     }
 }
