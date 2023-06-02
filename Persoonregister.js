@@ -48,6 +48,12 @@ var bijlage = [{
     "gewicht": 65
 }]
 
+
+function myFunction() {
+    document.getElementById("selectedLeeftijd").innerHTML = document.getElementById("leeftijd").value;
+}
+
+
 var ContainerElement = document.getElementById('container');
 
 var leeftijdCheck = parseInt(document.getElementById("leeftijd").value);
